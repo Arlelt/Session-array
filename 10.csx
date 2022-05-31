@@ -1,13 +1,9 @@
-
-
-public void PrintarArray(int[] numero)
-{
-
-    foreach (int item in numero)
-    {
-        Console.Write($"{item} ");
+public int SomarNumeros (int[] array) {
+    int a = 0;
+    foreach (int item in array) {
+        a = a + item;
     }
-
+    return a;
 }
 
 public void main()
@@ -23,7 +19,8 @@ public void main()
 
         }
 
-        PrintarArray(b);
+        int x = SomarNumeros(b);
+        Console.WriteLine($"A soma dos números é {x}");
 
     }
 
@@ -36,4 +33,3 @@ public void main()
 }
 
 main();
-

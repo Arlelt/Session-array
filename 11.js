@@ -1,12 +1,15 @@
 const readline = require('prompt-sync')();
 
-function menorNumero (array) {
-    let a = Number.MAX_VALUE;
+function mediaNumeros (array) {
+    let a = 0;
+    let b = 0;
     for (let item of array) {
-        if (item < a)
-            a = item;
+        a= a + item;
+        b++;
     }
-    return a;
+
+    let x = a/b;
+    return x;
 }
 
 function main () {
@@ -18,8 +21,8 @@ function main () {
         for(let i = 0; i<a; i++){
             numero[i]= Number(readline());            
         }
-        let b = menorNumero(numero);
-        console.log(`O menor número é ${b}`);
+        let b = mediaNumeros(numero);
+        console.log(`A média dos elementos é ${b}`);
     }
     catch (err){
         console.log(err.message);

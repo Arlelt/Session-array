@@ -1,12 +1,18 @@
 const readline = require('prompt-sync')();
 
-function menorNumero (array) {
-    let a = Number.MAX_VALUE;
+function segundoMaiorNumero (array) {
+    let a = Number.MIN_VALUE;
+    let b = Number.MIN_VALUE;
     for (let item of array) {
-        if (item < a)
+        if (item > a) 
             a = item;
     }
-    return a;
+
+    for (let item of array) {
+        if (b < item && item < a)
+            b = item;
+    }
+    return b;
 }
 
 function main () {
@@ -18,8 +24,8 @@ function main () {
         for(let i = 0; i<a; i++){
             numero[i]= Number(readline());            
         }
-        let b = menorNumero(numero);
-        console.log(`O menor número é ${b}`);
+        let b = segundoMaiorNumero(numero);
+        console.log(`O segundo maior número é ${b}`);
     }
     catch (err){
         console.log(err.message);

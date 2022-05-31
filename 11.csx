@@ -1,13 +1,13 @@
-
-
-public void PrintarArray(int[] numero)
-{
-
-    foreach (int item in numero)
-    {
-        Console.Write($"{item} ");
+public double MediaNumeros (int[] array) {
+    double a = 0;
+    double b = 0;
+    foreach (int item in array) {
+        a = a + item;
+        b++;
     }
 
+    double x = a/b;
+    return x;
 }
 
 public void main()
@@ -23,7 +23,8 @@ public void main()
 
         }
 
-        PrintarArray(b);
+        double x = MediaNumeros(b);
+        Console.WriteLine($"A média dos números é {x}");
 
     }
 
@@ -36,4 +37,3 @@ public void main()
 }
 
 main();
-

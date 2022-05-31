@@ -1,13 +1,16 @@
-
-
-public void PrintarArray(int[] numero)
-{
-
-    foreach (int item in numero)
-    {
-        Console.Write($"{item} ");
+public int SegundoMaiorNumero (int[] array) {
+    int a = -2147483647;
+    int b = -2147483647;
+    foreach (int item in array) {
+        if (item > a) 
+            a = item;
     }
 
+    foreach (int item in array) {
+        if (b < item && item < a)
+            b = item;
+    }
+    return b;
 }
 
 public void main()
@@ -23,7 +26,8 @@ public void main()
 
         }
 
-        PrintarArray(b);
+        int x = SegundoMaiorNumero(b);
+        Console.WriteLine($"O segundo maior número é {x}");
 
     }
 
@@ -36,4 +40,3 @@ public void main()
 }
 
 main();
-

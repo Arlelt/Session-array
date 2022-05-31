@@ -1,10 +1,9 @@
 const readline = require('prompt-sync')();
 
-function menorNumero (array) {
-    let a = Number.MAX_VALUE;
+function somarNumeros (array) {
+    let a = 0;
     for (let item of array) {
-        if (item < a)
-            a = item;
+        a= a + item;
     }
     return a;
 }
@@ -18,8 +17,8 @@ function main () {
         for(let i = 0; i<a; i++){
             numero[i]= Number(readline());            
         }
-        let b = menorNumero(numero);
-        console.log(`O menor número é ${b}`);
+        let b = somarNumeros(numero);
+        console.log(`A soma dos elementos é ${b}`);
     }
     catch (err){
         console.log(err.message);
