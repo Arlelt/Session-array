@@ -1,4 +1,4 @@
-const readline = require('prompt-sync')();
+const readline = require('prompt-sync') ();
 
 function tabuada (num) {
     let a = [];
@@ -6,5 +6,19 @@ function tabuada (num) {
         a[i] = num * i;
     }
 
-    return
+    return a;
 }
+
+function main () {
+    try {
+        console.log('insira um número');
+        let a = Number(readline());
+        let x = tabuada(a);
+        console.log(x);
+    } catch (err) {
+        console.log('TÁ ERRADO');
+        console.log(err.message);
+    }
+}
+
+main ();
